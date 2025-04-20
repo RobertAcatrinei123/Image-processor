@@ -1,5 +1,7 @@
 #include "image.h"
 #include <math.h>
+#include <iostream>
+#include <fstream>
 
 Size::Size() : w(0), h(0) {}
 Size::Size(int w, int h) : w(w), h(h) {}
@@ -59,25 +61,181 @@ Size Image::size() const { return s; }
 
 bool Image::save(const std::string &filename) const
 {
-    // Implement saving logic here
+    std::ofstream ofs(filename);
+    if (!ofs.is_open())
+    {
+        return false;
+    }
+    ofs << "P2\n";
+    ofs << s.width() << " " << s.height() << "\n";
+    ofs << this->max_value() << "\n";
+    std::setw(3);
+    for (int i = 0; i < s.height(); ++i)
+    {
+        for (int j = 0; j < s.width(); ++j)
+        {
+            ofs << static_cast<int>(data[i][j]) << " ";
+            if ((i * s.width() + j) % 17 == 0 && !(j == 0 && i == 0))
+            {
+                ofs << "\n";
+            }
+        }
+    }
     return true;
 }
 
 bool Image::load(const std::string &filename)
 {
-    // Implement loading logic here
+    std::ifstream ifs(filename);
+    if (!ifs.is_open())
+    {
+        return false;
+    }
+    char m[2];
+    if (ifs.peek() == '#')
+    {
+        std::string comment;
+        std::getline(ifs, comment);
+    }
+    ifs >> m[0];
+    if(ifs.peek() == '#')
+    {
+        std::string comment;
+        std::getline(ifs, comment);
+    }
+    ifs >> m[1];
+    if (m[0] != 'P' || m[1] != '2')
+    {
+        return false;
+    }
+    int max_val, w, h;
+    if(ifs.peek() == '#')
+    {
+        std::string comment;
+        std::getline(ifs, comment);
+    }
+    ifs >> w ;
+    if(ifs.peek() == '#')
+    {
+        std::string comment;
+        std::getline(ifs, comment);
+    }
+    ifs >> h ;
+    if(ifs.peek() == '#')
+    {
+        std::string comment;
+        std::getline(ifs, comment);
+    }
+    ifs >> max_val;
+    if (w <= 0 || h <= 0 || max_val <= 0)
+    {
+        return false;
+    }
+    release();
+    s = Size(w, h);
+    data = new unsigned char *[h];
+    for (int i = 0; i < h; ++i)
+    {
+        data[i] = new unsigned char[w];
+        for (int j = 0; j < w; ++j)
+        {
+            if(ifs.peek() == '#')
+            {
+                std::string comment;
+                std::getline(ifs, comment);
+            }
+            int val;
+            ifs >> val;
+            data[i][j] = static_cast<unsigned char>(val);
+        }
+    }
     return true;
 }
 
 std::ostream &operator<<(std::ostream &os, const Image &img)
 {
-    // Implement output logic here
+    os << "P2\n";
+    os << img.s.width() << " " << img.s.height() << "\n";
+    os << img.max_value() << "\n";
+    for (int i = 0; i < img.s.height(); ++i)
+    {
+        for (int j = 0; j < img.s.width(); ++j)
+        {
+            os << static_cast<int>(img.data[i][j]) << " ";
+            if ((i * img.s.width() + j) % 17 == 0 && !(j == 0 && i == 0))
+            {
+                os << "\n";
+            }
+        }
+    }
     return os;
 }
 
 std::istream &operator>>(std::istream &is, Image &img)
 {
-    // Implement input logic here
+    char m[2];
+    if (is.peek() == '#')
+    {
+        std::string comment;
+        std::getline(is, comment);
+    }
+    is >> m[0];
+    if (is.peek() == '#')
+    {
+        std::string comment;
+        std::getline(is, comment);
+    }
+    is >> m[1];
+    if (m[0] != 'P' || m[1] != '2')
+    {
+        throw std::invalid_argument("Invalid image format");
+    }
+    int max_val, w, h;
+    if (is.peek() == '#')
+    {
+        std::string comment;
+        std::getline(is, comment);
+    }
+    is >> w;
+    if (is.peek() == '#')
+    {
+        std::string comment;
+        std::getline(is, comment);
+    }
+    is >> h;
+    if (is.peek() == '#')
+    {
+        std::string comment;
+        std::getline(is, comment);
+    }
+    is >> max_val;
+    if (w <= 0 || h <= 0 || max_val <= 0)
+    {
+        throw std::invalid_argument("Invalid image dimensions or max value");
+    }
+    img.release();
+    img.s = Size(w, h);
+    img.data = new unsigned char *[h];
+    for (int i = 0; i < h; ++i)
+    {
+        img.data[i] = new unsigned char[w];
+        for (int j = 0; j < w; ++j)
+        {
+            if (is.peek() == '#')
+            {
+                std::string comment;
+                std::getline(is, comment);
+            }
+            int val;
+            is >> val;
+            img.data[i][j] = static_cast<unsigned char>(val);
+        }
+    }
+    if (is.fail())
+    {
+        img.release();
+        throw std::runtime_error("Error reading image data");
+    }
     return is;
 }
 
@@ -316,7 +474,7 @@ Image Image::ones(int w, int h)
     return img;
 }
 
-int Image::max_value()
+int Image::max_value() const
 {
     int max_val = 0;
     for (int i = 0; i < s.height(); ++i)

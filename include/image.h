@@ -20,7 +20,7 @@ class Image
 private:
     Size s;
     unsigned char **data;
-    int max_value();
+    int max_value() const;
 
 public:
     Image();
