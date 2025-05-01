@@ -13,6 +13,8 @@ public:
     Size(int w, int h);
     int width() const;
     int height() const;
+    bool operator==(const Size &other) const;
+    bool operator!=(const Size &other) const;
 };
 
 class Image
@@ -45,6 +47,8 @@ public:
     Image operator+=(const int scalar);
     Image operator-=(const int scalar);
     Image operator*=(const int scalar) const;
+    bool operator==(const Image &other) const;
+    bool operator!=(const Image &other) const;
     bool empty() const;
     unsigned char &at(int x, int y);
     unsigned char &at(const Point &p);

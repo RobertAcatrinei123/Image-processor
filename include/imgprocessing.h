@@ -1,7 +1,8 @@
 #pragma once
+#include "image.h"
 
 class ImageProcessing
 {
-    public:
-    
+public:
+    virtual void process(const Image &src,Image &dest) = 0;
 };

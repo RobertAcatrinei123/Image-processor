@@ -12,6 +12,16 @@ int Size::width() const { return w; }
 int Size::height() const { return h; }
 Image::Image() : s(0, 0), data(nullptr) {}
 
+bool Size::operator==(const Size &other) const
+{
+    return w == other.w && h == other.h;
+}
+
+bool Size::operator!=(const Size &other) const
+{
+    return !(*this == other);
+}
+
 Image::Image(int w, int h) : s(w, h)
 {
     data = new unsigned char *[h];
@@ -192,7 +202,7 @@ Image Image::operator+(const Image &other) const
         for (int j = 0; j < s.width(); ++j)
         {
 
-            result.data[i][j] = std::clamp(data[i][j] + other.data[i][j], 0, 255);
+            result.data[i][j] = std::clamp((int)data[i][j] + (int)other.data[i][j], 0, 255);
         }
     }
     return result;
@@ -209,7 +219,7 @@ Image Image::operator-(const Image &other) const
     {
         for (int j = 0; j < s.width(); ++j)
         {
-            result.data[i][j] = std::clamp(data[i][j] - other.data[i][j], 0, 255);
+            result.data[i][j] = std::clamp((int)data[i][j] - (int)other.data[i][j], 0, 255);
         }
     }
     return result;
@@ -225,8 +235,7 @@ Image Image::operator+=(const Image &other)
     {
         for (int j = 0; j < s.width(); ++j)
         {
-            data[i][j] += other.data[i][j];
-            data[i][j] = std::clamp(int(data[i][j]), 0, 255);
+            data[i][j] = std::clamp((int)data[i][j] + (int)other.data[i][j], 0, 255);
         }
     }
     return *this;
@@ -242,8 +251,7 @@ Image Image::operator-=(const Image &other)
     {
         for (int j = 0; j < s.width(); ++j)
         {
-            data[i][j] -= other.data[i][j];
-            data[i][j] = std::clamp(int(data[i][j]), 0, 255);
+            data[i][j] = std::clamp((int)data[i][j] - (int)other.data[i][j], 0, 255);
         }
     }
     return *this;
@@ -256,7 +264,7 @@ Image Image::operator*(const int scalar) const
     {
         for (int j = 0; j < s.width(); ++j)
         {
-            result.data[i][j] = std::clamp(data[i][j] * scalar, 0, 255);
+            result.data[i][j] = std::clamp((int)data[i][j] * scalar, 0, 255);
         }
     }
     return result;
@@ -269,7 +277,7 @@ Image Image::operator+(const int scalar) const
     {
         for (int j = 0; j < s.width(); ++j)
         {
-            result.data[i][j] = std::clamp(data[i][j] + scalar, 0, 255);
+            result.data[i][j] = std::clamp((int)data[i][j] + scalar, 0, 255);
         }
     }
     return result;
@@ -282,7 +290,7 @@ Image Image::operator-(const int scalar) const
     {
         for (int j = 0; j < s.width(); ++j)
         {
-            result.data[i][j] = std::clamp(data[i][j] - scalar, 0, 255);
+            result.data[i][j] = std::clamp((int)data[i][j] - scalar, 0, 255);
         }
     }
     return result;
@@ -294,8 +302,7 @@ Image Image::operator+=(const int scalar)
     {
         for (int j = 0; j < s.width(); ++j)
         {
-            data[i][j] += scalar;
-            data[i][j] = std::clamp(int(data[i][j]), 0, 255);
+            data[i][j] = std::clamp(int(data[i][j]) + scalar, 0, 255);
         }
     }
     return *this;
@@ -307,8 +314,7 @@ Image Image::operator-=(const int scalar)
     {
         for (int j = 0; j < s.width(); ++j)
         {
-            data[i][j] -= scalar;
-            data[i][j] = std::clamp(int(data[i][j]), 0, 255);
+            data[i][j] = std::clamp(int(data[i][j]) - scalar, 0, 255);
         }
     }
     return *this;
@@ -320,8 +326,7 @@ Image Image::operator*=(const int scalar) const
     {
         for (int j = 0; j < s.width(); ++j)
         {
-            data[i][j] *= scalar;
-            data[i][j] = std::clamp(int(data[i][j]), 0, 255);
+            data[i][j] = std::clamp(int(data[i][j]) * scalar, 0, 255);
         }
     }
     return *this;
@@ -414,4 +419,29 @@ Image Image::ones(int w, int h)
         }
     }
     return img;
+}
+
+bool Image::operator==(const Image &other) const
+{
+    if (s != other.s)
+    {
+        return false;
+    }
+
+    for (int i = 0; i < s.height(); ++i)
+    {
+        for (int j = 0; j < s.width(); ++j)
+        {
+            if (data[i][j] != other.data[i][j])
+            {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+bool Image::operator!=(const Image &other) const
+{
+    return !(*this == other);
 }
