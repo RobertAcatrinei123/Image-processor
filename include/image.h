@@ -19,8 +19,8 @@ class Image
 {
 private:
     Size s;
+    unsigned char max_value;
     unsigned char **data;
-    int max_value() const;
 
 public:
     Image();

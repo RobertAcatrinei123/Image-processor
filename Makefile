@@ -1,5 +1,5 @@
-CXX = g++-14
-CXXFLAGS = -std=c++14 -Wall -g -I include
+CXX = clang++
+CXXFLAGS = -std=c++20 -Wall -g -I include
 
 TARGET = app
 SRCS = $(wildcard src/*.cpp)

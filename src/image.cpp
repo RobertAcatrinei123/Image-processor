@@ -2,6 +2,9 @@
 #include <math.h>
 #include <iostream>
 #include <fstream>
+#include <iomanip>
+#include <algorithm>
+#include "reader.h"
 
 Size::Size() : w(0), h(0) {}
 Size::Size(int w, int h) : w(w), h(h) {}
@@ -68,14 +71,15 @@ bool Image::save(const std::string &filename) const
     }
     ofs << "P2\n";
     ofs << s.width() << " " << s.height() << "\n";
-    ofs << this->max_value() << "\n";
-    std::setw(3);
+    ofs << int(max_value) << "\n";
+    int ind = 0;
     for (int i = 0; i < s.height(); ++i)
     {
         for (int j = 0; j < s.width(); ++j)
         {
-            ofs << static_cast<int>(data[i][j]) << " ";
-            if ((i * s.width() + j) % 17 == 0 && !(j == 0 && i == 0))
+            ofs << std::setw(3) << int(data[i][j]) << " ";
+            ind++;
+            if (ind != 0 && ind % 17 == 0)
             {
                 ofs << "\n";
             }
@@ -91,45 +95,22 @@ bool Image::load(const std::string &filename)
     {
         return false;
     }
-    char m[2];
-    if (ifs.peek() == '#')
+    std::string magic_number;
+    std::getline(ifs, magic_number);
+    if (magic_number[0] != 'P' || magic_number[1] != '2')
     {
-        std::string comment;
-        std::getline(ifs, comment);
+        throw std::invalid_argument("Invalid image format");
     }
-    ifs >> m[0];
-    if(ifs.peek() == '#')
+    Reader reader(ifs);
+    int w = reader.nextInt();
+    // std::cerr << "w: " << w << std::endl;
+    int h = reader.nextInt();
+    // std::cerr << "h: " << h << std::endl;
+    max_value = reader.nextInt();
+    // std::cerr << "max_val: " << max_val << std::endl;
+    if (w <= 0 || h <= 0 || max_value <= 0)
     {
-        std::string comment;
-        std::getline(ifs, comment);
-    }
-    ifs >> m[1];
-    if (m[0] != 'P' || m[1] != '2')
-    {
-        return false;
-    }
-    int max_val, w, h;
-    if(ifs.peek() == '#')
-    {
-        std::string comment;
-        std::getline(ifs, comment);
-    }
-    ifs >> w ;
-    if(ifs.peek() == '#')
-    {
-        std::string comment;
-        std::getline(ifs, comment);
-    }
-    ifs >> h ;
-    if(ifs.peek() == '#')
-    {
-        std::string comment;
-        std::getline(ifs, comment);
-    }
-    ifs >> max_val;
-    if (w <= 0 || h <= 0 || max_val <= 0)
-    {
-        return false;
+        throw std::invalid_argument("Invalid image dimensions or max value");
     }
     release();
     s = Size(w, h);
@@ -139,14 +120,9 @@ bool Image::load(const std::string &filename)
         data[i] = new unsigned char[w];
         for (int j = 0; j < w; ++j)
         {
-            if(ifs.peek() == '#')
-            {
-                std::string comment;
-                std::getline(ifs, comment);
-            }
-            int val;
-            ifs >> val;
-            data[i][j] = static_cast<unsigned char>(val);
+            int val = reader.nextInt();
+            // std::cerr << "val: " << val << std::endl;
+            data[i][j] = (unsigned char)(val);
         }
     }
     return true;
@@ -156,13 +132,15 @@ std::ostream &operator<<(std::ostream &os, const Image &img)
 {
     os << "P2\n";
     os << img.s.width() << " " << img.s.height() << "\n";
-    os << img.max_value() << "\n";
-    for (int i = 0; i < img.s.height(); ++i)
+    os << int(img.max_value) << "\n";
+    int ind = 0;
+    for (int i = 0; i < img.height(); ++i)
     {
-        for (int j = 0; j < img.s.width(); ++j)
+        for (int j = 0; j < img.width(); ++j)
         {
-            os << static_cast<int>(img.data[i][j]) << " ";
-            if ((i * img.s.width() + j) % 17 == 0 && !(j == 0 && i == 0))
+            os << std::setw(3) << int(img.data[i][j]) << " ";
+            ind++;
+            if (ind != 0 && ind % 17 == 0)
             {
                 os << "\n";
             }
@@ -173,43 +151,17 @@ std::ostream &operator<<(std::ostream &os, const Image &img)
 
 std::istream &operator>>(std::istream &is, Image &img)
 {
-    char m[2];
-    if (is.peek() == '#')
-    {
-        std::string comment;
-        std::getline(is, comment);
-    }
-    is >> m[0];
-    if (is.peek() == '#')
-    {
-        std::string comment;
-        std::getline(is, comment);
-    }
-    is >> m[1];
-    if (m[0] != 'P' || m[1] != '2')
+    std::string magic_number;
+    std::getline(is, magic_number);
+    if (magic_number[0] != 'P' || magic_number[1] != '2')
     {
         throw std::invalid_argument("Invalid image format");
     }
-    int max_val, w, h;
-    if (is.peek() == '#')
-    {
-        std::string comment;
-        std::getline(is, comment);
-    }
-    is >> w;
-    if (is.peek() == '#')
-    {
-        std::string comment;
-        std::getline(is, comment);
-    }
-    is >> h;
-    if (is.peek() == '#')
-    {
-        std::string comment;
-        std::getline(is, comment);
-    }
-    is >> max_val;
-    if (w <= 0 || h <= 0 || max_val <= 0)
+    Reader reader(is);
+    int w = reader.nextInt();
+    int h = reader.nextInt();
+    img.max_value = reader.nextInt();
+    if (w <= 0 || h <= 0 || img.max_value <= 0)
     {
         throw std::invalid_argument("Invalid image dimensions or max value");
     }
@@ -221,20 +173,9 @@ std::istream &operator>>(std::istream &is, Image &img)
         img.data[i] = new unsigned char[w];
         for (int j = 0; j < w; ++j)
         {
-            if (is.peek() == '#')
-            {
-                std::string comment;
-                std::getline(is, comment);
-            }
-            int val;
-            is >> val;
-            img.data[i][j] = static_cast<unsigned char>(val);
+            int val = reader.nextInt();
+            img.data[i][j] = (unsigned char)(val);
         }
-    }
-    if (is.fail())
-    {
-        img.release();
-        throw std::runtime_error("Error reading image data");
     }
     return is;
 }
@@ -426,6 +367,7 @@ void Image::release()
         data = nullptr;
     }
 }
+
 Image Image::ROI(int x, int y, int w, int h) const
 {
     if (x < 0 || y < 0 || w <= 0 || h <= 0 || x + w > s.width() || y + h > s.height())
@@ -472,20 +414,4 @@ Image Image::ones(int w, int h)
         }
     }
     return img;
-}
-
-int Image::max_value() const
-{
-    int max_val = 0;
-    for (int i = 0; i < s.height(); ++i)
-    {
-        for (int j = 0; j < s.width(); ++j)
-        {
-            if (data[i][j] > max_val)
-            {
-                max_val = data[i][j];
-            }
-        }
-    }
-    return max_val;
 }
