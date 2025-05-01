@@ -12,7 +12,7 @@
       "environment": [],
       "externalConsole": true,
       "MIMode": "lldb",
-      "preLaunchTask": "Build with Makefile"
+      "preLaunchTask": "Build with Makefile and Coverage"
     }
   ]
 }

@@ -2,3 +2,4 @@ obj
 Extra credit III.pdf
 .DS_Store
 *.pgm
+*.gcov

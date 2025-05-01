@@ -20,6 +20,39 @@
       "command": "make clean",
       "group": "build",
       "problemMatcher": []
+    },
+    {
+      "label": "Generate icov.info",
+      "type": "shell",
+      "command": "make llvm_lcov",
+      "group": {
+        "kind": "test",
+        "isDefault": false
+      },
+      "presentation": {
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "Generate coverage.txt",
+      "type": "shell",
+      "command": "make llvm_coverage_report",
+      "group": {
+        "kind": "test",
+        "isDefault": false
+      },
+      "presentation": {
+        "reveal": "always"
+      }
+    },
+    {
+      "label": "Build with Makefile and Coverage",
+      "dependsOn": [
+        "Build with Makefile",
+        "Generate coverage.txt",
+        "Generate icov.info"
+      ],
+      "dependsOrder": "sequence"
     }
   ]
 }
