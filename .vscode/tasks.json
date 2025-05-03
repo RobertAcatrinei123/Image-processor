@@ -49,7 +49,6 @@
       "label": "Build with Makefile and Coverage",
       "dependsOn": [
         "Build with Makefile",
-        "Generate coverage.txt",
         "Generate icov.info"
       ],
       "dependsOrder": "sequence"

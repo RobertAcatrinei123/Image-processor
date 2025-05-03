@@ -351,6 +351,20 @@ unsigned char &Image::at(const Point &p)
     return at(p.x, p.y);
 }
 
+unsigned char Image::getAt(int x, int y) const
+{
+    if (x < 0 || x >= s.width() || y < 0 || y >= s.height())
+    {
+        throw std::out_of_range("Index out of range");
+    }
+    return data[y][x];
+}
+
+unsigned char Image::getAt(const Point &p) const
+{
+    return getAt(p.x, p.y);
+}
+
 unsigned char *Image::row(int y)
 {
     if (y < 0 || y >= s.height())
