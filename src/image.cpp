@@ -34,6 +34,7 @@ Image::Image(int w, int h) : s(w, h)
 Image::Image(const Image &img) : s(img.s)
 {
     data = new unsigned char *[s.height()];
+    max_value = img.max_value;
     for (int i = 0; i < s.height(); ++i)
     {
         data[i] = new unsigned char[s.width()];
@@ -55,6 +56,7 @@ Image &Image::operator=(const Image &img)
     {
         release();
         s = img.s;
+        max_value = img.max_value;
         data = new unsigned char *[s.height()];
         for (int i = 0; i < s.height(); ++i)
         {
@@ -351,18 +353,25 @@ unsigned char &Image::at(const Point &p)
     return at(p.x, p.y);
 }
 
-unsigned char Image::getAt(int x, int y) const
+unsigned char Image::getAt(int x, int y, bool pad) const
 {
     if (x < 0 || x >= s.width() || y < 0 || y >= s.height())
     {
-        throw std::out_of_range("Index out of range");
+        if (pad)
+        {
+            return 0;
+        }
+        else
+        {
+            throw std::out_of_range("Index out of range");
+        }
     }
     return data[y][x];
 }
 
-unsigned char Image::getAt(const Point &p) const
+unsigned char Image::getAt(const Point &p, bool pad) const
 {
-    return getAt(p.x, p.y);
+    return getAt(p.x, p.y, pad);
 }
 
 unsigned char *Image::row(int y)

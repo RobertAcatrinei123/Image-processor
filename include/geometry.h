@@ -1,10 +1,15 @@
 #pragma once
+#include <iostream>
 
 class Point
 {
 public:
     int x;
     int y;
+    Point() : x(0), y(0) {}
+    Point(int x, int y) : x(x), y(y) {}
+    friend std::ostream &operator<<(std::ostream &os, const Point &p);
+    friend std::istream &operator>>(std::istream &is, Point &p);
 };
 
 class Rectangle
@@ -13,4 +18,9 @@ public:
     Point top_left;
     int width;
     int height;
+    Rectangle() : top_left(0, 0), width(0), height(0) {}
+    Rectangle(int x, int y, int w, int h) : top_left(x, y), width(w), height(h) {}
+    Rectangle(const Point &p, int w, int h) : top_left(p), width(w), height(h) {}
+    friend std::ostream &operator<<(std::ostream &os, const Rectangle &p);
+    friend std::istream &operator>>(std::istream &is, Rectangle &p);
 };

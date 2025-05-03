@@ -23,8 +23,30 @@ class GammaCorrection : public ImageProcessing
 {
 private:
     double gamma;
+
 public:
     GammaCorrection() : gamma(1) {};
-    GammaCorrection(double g) {};
+    GammaCorrection(double g);
+    void process(const Image &src, Image &dest) override;
+};
+
+enum class ConvolutionType
+{
+    Identity,
+    MeanBlur,
+    GaussianBlur,
+    HorizontalSobel,
+    VerticalSobel,
+};
+
+class Convolution : public ImageProcessing
+{
+private:
+    int (*scalar)(int) = nullptr;
+    double kernel[3][3];
+
+public:
+    Convolution();
+    Convolution(ConvolutionType type);
     void process(const Image &src, Image &dest) override;
 };

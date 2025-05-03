@@ -52,8 +52,8 @@ public:
     bool empty() const;
     unsigned char &at(int x, int y);
     unsigned char &at(const Point &p);
-    unsigned char getAt(int x, int y) const;
-    unsigned char getAt(const Point &p) const;
+    unsigned char getAt(int x, int y, bool pad = false) const;
+    unsigned char getAt(const Point &p, bool pad = false) const;
     unsigned char *row(int y);
     void release();
     Image ROI(const Rectangle &r) const;

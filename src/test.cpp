@@ -5,12 +5,14 @@
 #include <fstream>
 #include <string>
 #include <assert.h>
+#include "imgprocessing.h"
 
 void testAll()
 {
     testIOFunctions();
     testIOStream();
     testOperators();
+    testImageProcessing();
 }
 
 void testIOFunctions()
@@ -71,4 +73,32 @@ void testOperators()
     img1 -= 1;
     img1 += 1;
     assert(img1 == img2);
+}
+
+void testImageProcessing()
+{
+    Image img1(100, 100);
+    img1.load("saturn.ascii.pgm");
+    Image img2(img1);
+    BrightnessContrast bc(1.5, 0.5);
+    bc.process(img1, img2);
+    img2.save("saturn_out_brightness_contrast.pgm");
+    GammaCorrection gc(2.2);
+    gc.process(img1, img2);
+    img2.save("saturn_out_gamma_correction.pgm");
+    Convolution conv1(ConvolutionType::Identity);
+    conv1.process(img1, img2);
+    img2.save("saturn_out_identity.pgm");
+    Convolution conv2(ConvolutionType::MeanBlur);
+    conv2.process(img1, img2);
+    img2.save("saturn_out_mean_blur.pgm");
+    Convolution conv3(ConvolutionType::GaussianBlur);
+    conv3.process(img1, img2);
+    img2.save("saturn_out_gaussian_blur.pgm");
+    Convolution conv4(ConvolutionType::HorizontalSobel);
+    conv4.process(img1, img2);
+    img2.save("saturn_out_horizontal_sobel.pgm");
+    Convolution conv5(ConvolutionType::VerticalSobel);
+    conv5.process(img1, img2);
+    img2.save("saturn_out_vertical_sobel.pgm");
 }
