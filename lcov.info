@@ -1,3 +1,29 @@
+SF:/Users/robert/Desktop/UBB/Semestru 2/OOP/bonus/3/include/geometry.h
+FN:9,_ZN5PointC2Ev
+FN:10,_ZN5PointC2Eii
+FN:21,_ZN9RectangleC2Ev
+FN:22,_ZN9RectangleC2Eiiii
+FN:23,_ZN9RectangleC2ERK5Pointii
+FN:24,_ZN9RectangleC2ERK5PointS2_
+FNDA:0,_ZN5PointC2Ev
+FNDA:0,_ZN5PointC2Eii
+FNDA:0,_ZN9RectangleC2Ev
+FNDA:0,_ZN9RectangleC2Eiiii
+FNDA:0,_ZN9RectangleC2ERK5Pointii
+FNDA:0,_ZN9RectangleC2ERK5PointS2_
+FNF:6
+FNH:0
+DA:9,0
+DA:10,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+BRF:0
+BRH:0
+LF:6
+LH:0
+end_of_record
 SF:/Users/robert/Desktop/UBB/Semestru 2/OOP/bonus/3/include/imgprocessing.h
 FN:17,_ZN18BrightnessContrastC2Ev
 FN:28,_ZN15GammaCorrectionC2Ev
@@ -10,6 +36,38 @@ DA:28,0
 BRF:0
 BRH:0
 LF:2
+LH:0
+end_of_record
+SF:/Users/robert/Desktop/UBB/Semestru 2/OOP/bonus/3/src/geometry.cpp
+FN:4,_ZlsRNSt3__113basic_ostreamIcNS_11char_traitsIcEEEERK5Point
+FN:10,_ZrsRNSt3__113basic_istreamIcNS_11char_traitsIcEEEER5Point
+FN:16,_ZlsRNSt3__113basic_ostreamIcNS_11char_traitsIcEEEERK9Rectangle
+FN:22,_ZrsRNSt3__113basic_istreamIcNS_11char_traitsIcEEEER9Rectangle
+FNDA:0,_ZlsRNSt3__113basic_ostreamIcNS_11char_traitsIcEEEERK5Point
+FNDA:0,_ZrsRNSt3__113basic_istreamIcNS_11char_traitsIcEEEER5Point
+FNDA:0,_ZlsRNSt3__113basic_ostreamIcNS_11char_traitsIcEEEERK9Rectangle
+FNDA:0,_ZrsRNSt3__113basic_istreamIcNS_11char_traitsIcEEEER9Rectangle
+FNF:4
+FNH:0
+DA:4,0
+DA:5,0
+DA:6,0
+DA:7,0
+DA:10,0
+DA:11,0
+DA:12,0
+DA:13,0
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:22,0
+DA:23,0
+DA:24,0
+DA:25,0
+BRF:0
+BRH:0
+LF:16
 LH:0
 end_of_record
 SF:/Users/robert/Desktop/UBB/Semestru 2/OOP/bonus/3/src/image.cpp
@@ -892,13 +950,13 @@ LF:162
 LH:133
 end_of_record
 SF:/Users/robert/Desktop/UBB/Semestru 2/OOP/bonus/3/src/main.cpp
-FN:8,main
+FN:9,main
 FNDA:1,main
 FNF:1
 FNH:1
-DA:8,1
 DA:9,1
 DA:10,1
+DA:11,1
 BRF:0
 BRH:0
 LF:3

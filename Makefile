@@ -36,4 +36,7 @@ llvm_lcov: run_coverage
 	rm -f coverage.profdata
 	rm -f coverage.txt
 
+leaks:
+	leaks -atExit -- ./$(TARGET)
+
 .PHONY: all clean obj run_coverage llvm_coverage_report llvm_lcov
