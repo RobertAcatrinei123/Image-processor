@@ -1,0 +1,54 @@
+\doxysection{Image\+Processing Class Reference}
+\hypertarget{class_image_processing}{}\label{class_image_processing}\index{ImageProcessing@{ImageProcessing}}
+
+
+Abstract base class for image processing operations.  
+
+
+
+
+{\ttfamily \#include $<$imgprocessing.\+h$>$}
+
+Inheritance diagram for Image\+Processing\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_image_processing}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_image_processing_af457a1dcd82a8b0dee3df623228859b0}{process}} (const \mbox{\hyperlink{class_image}{Image}} \&src, \mbox{\hyperlink{class_image}{Image}} \&dest)=0
+\begin{DoxyCompactList}\small\item\em Processes the source image and writes the result to dest. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for image processing operations. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_image_processing_af457a1dcd82a8b0dee3df623228859b0}\index{ImageProcessing@{ImageProcessing}!process@{process}}
+\index{process@{process}!ImageProcessing@{ImageProcessing}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily \label{class_image_processing_af457a1dcd82a8b0dee3df623228859b0} 
+virtual void Image\+Processing\+::process (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_image}{Image}} \&}]{src}{, }\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{dest}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Processes the source image and writes the result to dest. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Source image \\
+\hline
+{\em dest} & Destination image \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_brightness_contrast_a6455ad7d624d89958f1bab36ce622819}{Brightness\+Contrast}}, \mbox{\hyperlink{class_convolution_a4d9d7d0b374d6d05e04d0ba40072ab88}{Convolution}}, and \mbox{\hyperlink{class_gamma_correction_a9dee0cd25d45642827d4316a4730876a}{Gamma\+Correction}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/imgprocessing.\+h\end{DoxyCompactItemize}

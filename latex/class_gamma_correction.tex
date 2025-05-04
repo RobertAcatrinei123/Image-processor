@@ -1,0 +1,78 @@
+\doxysection{Gamma\+Correction Class Reference}
+\hypertarget{class_gamma_correction}{}\label{class_gamma_correction}\index{GammaCorrection@{GammaCorrection}}
+
+
+Applies gamma correction to an image.  
+
+
+
+
+{\ttfamily \#include $<$imgprocessing.\+h$>$}
+
+Inheritance diagram for Gamma\+Correction\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_gamma_correction}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_gamma_correction_ab2d7d4f01262f9c1f84b58e6255b633b}\label{class_gamma_correction_ab2d7d4f01262f9c1f84b58e6255b633b} 
+{\bfseries Gamma\+Correction} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Gamma = 1. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_gamma_correction_a12a30bd34b3ba4968f7584b3de1f6ad8}{Gamma\+Correction}} (double g)
+\begin{DoxyCompactList}\small\item\em Constructs with given gamma value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_gamma_correction_a9dee0cd25d45642827d4316a4730876a}{process}} (const \mbox{\hyperlink{class_image}{Image}} \&src, \mbox{\hyperlink{class_image}{Image}} \&dest) override
+\begin{DoxyCompactList}\small\item\em Processes the image with gamma correction. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Applies gamma correction to an image. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_gamma_correction_a12a30bd34b3ba4968f7584b3de1f6ad8}\index{GammaCorrection@{GammaCorrection}!GammaCorrection@{GammaCorrection}}
+\index{GammaCorrection@{GammaCorrection}!GammaCorrection@{GammaCorrection}}
+\doxysubsubsection{\texorpdfstring{GammaCorrection()}{GammaCorrection()}}
+{\footnotesize\ttfamily \label{class_gamma_correction_a12a30bd34b3ba4968f7584b3de1f6ad8} 
+Gamma\+Correction\+::\+Gamma\+Correction (\begin{DoxyParamCaption}\item[{double}]{g}{}\end{DoxyParamCaption})}
+
+
+
+Constructs with given gamma value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em g} & Gamma value \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_gamma_correction_a9dee0cd25d45642827d4316a4730876a}\index{GammaCorrection@{GammaCorrection}!process@{process}}
+\index{process@{process}!GammaCorrection@{GammaCorrection}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily \label{class_gamma_correction_a9dee0cd25d45642827d4316a4730876a} 
+void Gamma\+Correction\+::process (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_image}{Image}} \&}]{src}{, }\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{dest}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Processes the image with gamma correction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Source image \\
+\hline
+{\em dest} & Destination image \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_image_processing_af457a1dcd82a8b0dee3df623228859b0}{Image\+Processing}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/imgprocessing.\+h\item 
+src/imgprocessing.\+cpp\end{DoxyCompactItemize}

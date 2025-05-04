@@ -1,0 +1,272 @@
+\doxysection{Rectangle Class Reference}
+\hypertarget{class_rectangle}{}\label{class_rectangle}\index{Rectangle@{Rectangle}}
+
+
+Represents a rectangle defined by top-\/left point, width, and height.  
+
+
+
+
+{\ttfamily \#include $<$geometry.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_rectangle_a8a933e0ebd9e80ce91e61ffe87fd577e}\label{class_rectangle_a8a933e0ebd9e80ce91e61ffe87fd577e} 
+{\bfseries Rectangle} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Initializes rectangle at (0,0) with zero size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rectangle_a1546993e9fc10b8d128f4a85ed68c653}{Rectangle}} (int x, int y, int w, int h)
+\begin{DoxyCompactList}\small\item\em Constructs a rectangle from coordinates and size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rectangle_ae51a0157bed7f785f2b4375a7be97eb6}{Rectangle}} (const \mbox{\hyperlink{class_point}{Point}} \&p, int w, int h)
+\begin{DoxyCompactList}\small\item\em Constructs a rectangle from a point and size. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rectangle_a2c070b3e1906f183cad212e9e0c4242a}{Rectangle}} (const \mbox{\hyperlink{class_point}{Point}} \&\mbox{\hyperlink{class_rectangle_a5c37d1f5a8674cd438e59e0686be1976}{top\+\_\+left}}, const \mbox{\hyperlink{class_point}{Point}} \&bottom\+\_\+right)
+\begin{DoxyCompactList}\small\item\em Constructs a rectangle from two points. \end{DoxyCompactList}\item 
+std\+::pair$<$ \mbox{\hyperlink{class_point}{Point}}, \mbox{\hyperlink{class_point}{Point}} $>$ \mbox{\hyperlink{class_rectangle_a3f1a27d88098449f288bd5efb21c6f17}{get\+Corners}} () const
+\begin{DoxyCompactList}\small\item\em Returns the top-\/left and bottom-\/right corners as a pair. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_rectangle_ae2c7aecf4c4fa6ee51bfc7430f70474e}{operator==}} (const \mbox{\hyperlink{class_rectangle}{Rectangle}} \&other) const
+\begin{DoxyCompactList}\small\item\em Equality operator. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rectangle}{Rectangle}} \mbox{\hyperlink{class_rectangle_a8c74f5fe501ec3746f11dc44d642feb4}{operator+}} (const int scalar) const
+\begin{DoxyCompactList}\small\item\em Adds a scalar to the rectangle\textquotesingle{}s position. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rectangle}{Rectangle}} \mbox{\hyperlink{class_rectangle_a0500a0349716ffaa0ce891ece7ab5426}{operator-\/}} (const int scalar) const
+\begin{DoxyCompactList}\small\item\em Subtracts a scalar from the rectangle\textquotesingle{}s position. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rectangle}{Rectangle}} \mbox{\hyperlink{class_rectangle_a0cc4c99f47020e7b11a64bb4ed478db4}{operator\&}} (const \mbox{\hyperlink{class_rectangle}{Rectangle}} \&other) const
+\begin{DoxyCompactList}\small\item\em Returns the intersection of two rectangles. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_rectangle}{Rectangle}} \mbox{\hyperlink{class_rectangle_a268e228beaefc56bf770d549f1514aa1}{operator\texorpdfstring{$\vert$}{|}}} (const \mbox{\hyperlink{class_rectangle}{Rectangle}} \&other) const
+\begin{DoxyCompactList}\small\item\em Returns the union of two rectangles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_rectangle_a5c37d1f5a8674cd438e59e0686be1976}\label{class_rectangle_a5c37d1f5a8674cd438e59e0686be1976} 
+\mbox{\hyperlink{class_point}{Point}} {\bfseries top\+\_\+left}
+\begin{DoxyCompactList}\small\item\em Top-\/left corner. \end{DoxyCompactList}\item 
+\Hypertarget{class_rectangle_a019ed802523594472e0032953b6062d4}\label{class_rectangle_a019ed802523594472e0032953b6062d4} 
+int {\bfseries width}
+\begin{DoxyCompactList}\small\item\em Width. \end{DoxyCompactList}\item 
+\Hypertarget{class_rectangle_ac564db1ed0dd61dd82a5276399bc72ad}\label{class_rectangle_ac564db1ed0dd61dd82a5276399bc72ad} 
+int {\bfseries height}
+\begin{DoxyCompactList}\small\item\em Height. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_rectangle_adf5c9bff7e7878bc7cb8820ea3d0e185}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_rectangle}{Rectangle}} \&p)
+\begin{DoxyCompactList}\small\item\em Output stream operator. \end{DoxyCompactList}\item 
+std\+::istream \& \mbox{\hyperlink{class_rectangle_a17542e1253118561ea29550bac5a6c1f}{operator$>$$>$}} (std\+::istream \&is, \mbox{\hyperlink{class_rectangle}{Rectangle}} \&p)
+\begin{DoxyCompactList}\small\item\em Input stream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a rectangle defined by top-\/left point, width, and height. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_rectangle_a1546993e9fc10b8d128f4a85ed68c653}\index{Rectangle@{Rectangle}!Rectangle@{Rectangle}}
+\index{Rectangle@{Rectangle}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{Rectangle()}{Rectangle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_rectangle_a1546993e9fc10b8d128f4a85ed68c653} 
+Rectangle\+::\+Rectangle (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{w}{, }\item[{int}]{h}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a rectangle from coordinates and size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate of top-\/left \\
+\hline
+{\em y} & Y coordinate of top-\/left \\
+\hline
+{\em w} & Width \\
+\hline
+{\em h} & Height \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_rectangle_ae51a0157bed7f785f2b4375a7be97eb6}\index{Rectangle@{Rectangle}!Rectangle@{Rectangle}}
+\index{Rectangle@{Rectangle}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{Rectangle()}{Rectangle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_rectangle_ae51a0157bed7f785f2b4375a7be97eb6} 
+Rectangle\+::\+Rectangle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{p}{, }\item[{int}]{w}{, }\item[{int}]{h}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a rectangle from a point and size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Top-\/left point \\
+\hline
+{\em w} & Width \\
+\hline
+{\em h} & Height \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_rectangle_a2c070b3e1906f183cad212e9e0c4242a}\index{Rectangle@{Rectangle}!Rectangle@{Rectangle}}
+\index{Rectangle@{Rectangle}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{Rectangle()}{Rectangle()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_rectangle_a2c070b3e1906f183cad212e9e0c4242a} 
+Rectangle\+::\+Rectangle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{top\+\_\+left}{, }\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{bottom\+\_\+right}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a rectangle from two points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em top\+\_\+left} & Top-\/left point \\
+\hline
+{\em bottom\+\_\+right} & Bottom-\/right point \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_rectangle_a3f1a27d88098449f288bd5efb21c6f17}\index{Rectangle@{Rectangle}!getCorners@{getCorners}}
+\index{getCorners@{getCorners}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{getCorners()}{getCorners()}}
+{\footnotesize\ttfamily \label{class_rectangle_a3f1a27d88098449f288bd5efb21c6f17} 
+std\+::pair$<$ \mbox{\hyperlink{class_point}{Point}}, \mbox{\hyperlink{class_point}{Point}} $>$ Rectangle\+::get\+Corners (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the top-\/left and bottom-\/right corners as a pair. 
+
+\begin{DoxyReturn}{Returns}
+Pair of points (top-\/left, bottom-\/right) 
+\end{DoxyReturn}
+\Hypertarget{class_rectangle_a0cc4c99f47020e7b11a64bb4ed478db4}\index{Rectangle@{Rectangle}!operator\&@{operator\&}}
+\index{operator\&@{operator\&}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{operator\&()}{operator\&()}}
+{\footnotesize\ttfamily \label{class_rectangle_a0cc4c99f47020e7b11a64bb4ed478db4} 
+\mbox{\hyperlink{class_rectangle}{Rectangle}} Rectangle\+::operator\& (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_rectangle}{Rectangle}} \&}]{other}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the intersection of two rectangles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \doxylink{class_rectangle}{Rectangle} to intersect with \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Intersection rectangle 
+\end{DoxyReturn}
+\Hypertarget{class_rectangle_a8c74f5fe501ec3746f11dc44d642feb4}\index{Rectangle@{Rectangle}!operator+@{operator+}}
+\index{operator+@{operator+}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \label{class_rectangle_a8c74f5fe501ec3746f11dc44d642feb4} 
+\mbox{\hyperlink{class_rectangle}{Rectangle}} Rectangle\+::operator+ (\begin{DoxyParamCaption}\item[{const int}]{scalar}{}\end{DoxyParamCaption}) const}
+
+
+
+Adds a scalar to the rectangle\textquotesingle{}s position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & Value to add \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Resulting rectangle 
+\end{DoxyReturn}
+\Hypertarget{class_rectangle_a0500a0349716ffaa0ce891ece7ab5426}\index{Rectangle@{Rectangle}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \label{class_rectangle_a0500a0349716ffaa0ce891ece7ab5426} 
+\mbox{\hyperlink{class_rectangle}{Rectangle}} Rectangle\+::operator-\/ (\begin{DoxyParamCaption}\item[{const int}]{scalar}{}\end{DoxyParamCaption}) const}
+
+
+
+Subtracts a scalar from the rectangle\textquotesingle{}s position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & Value to subtract \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Resulting rectangle 
+\end{DoxyReturn}
+\Hypertarget{class_rectangle_ae2c7aecf4c4fa6ee51bfc7430f70474e}\index{Rectangle@{Rectangle}!operator==@{operator==}}
+\index{operator==@{operator==}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{class_rectangle_ae2c7aecf4c4fa6ee51bfc7430f70474e} 
+bool Rectangle\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_rectangle}{Rectangle}} \&}]{other}{}\end{DoxyParamCaption}) const}
+
+
+
+Equality operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \doxylink{class_rectangle}{Rectangle} to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if rectangles are equal 
+\end{DoxyReturn}
+\Hypertarget{class_rectangle_a268e228beaefc56bf770d549f1514aa1}\index{Rectangle@{Rectangle}!operator\texttt{"|}@{operator\texttt{"|}}}
+\index{operator\texttt{"|}@{operator\texttt{"|}}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{operator\texttt{"|}()}{operator|()}}
+{\footnotesize\ttfamily \label{class_rectangle_a268e228beaefc56bf770d549f1514aa1} 
+\mbox{\hyperlink{class_rectangle}{Rectangle}} Rectangle\+::operator\texorpdfstring{$\vert$}{|} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_rectangle}{Rectangle}} \&}]{other}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the union of two rectangles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \doxylink{class_rectangle}{Rectangle} to union with \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Union rectangle 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_rectangle_adf5c9bff7e7878bc7cb8820ea3d0e185}\index{Rectangle@{Rectangle}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \label{class_rectangle_adf5c9bff7e7878bc7cb8820ea3d0e185} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{, }\item[{const \mbox{\hyperlink{class_rectangle}{Rectangle}} \&}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Output stream operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Output stream \\
+\hline
+{\em p} & \doxylink{class_rectangle}{Rectangle} to output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to output stream 
+\end{DoxyReturn}
+\Hypertarget{class_rectangle_a17542e1253118561ea29550bac5a6c1f}\index{Rectangle@{Rectangle}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Rectangle@{Rectangle}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily \label{class_rectangle_a17542e1253118561ea29550bac5a6c1f} 
+std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is}{, }\item[{\mbox{\hyperlink{class_rectangle}{Rectangle}} \&}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Input stream operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is} & Input stream \\
+\hline
+{\em p} & \doxylink{class_rectangle}{Rectangle} to input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to input stream 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/geometry.\+h\item 
+src/geometry.\+cpp\end{DoxyCompactItemize}

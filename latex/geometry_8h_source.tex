@@ -1,0 +1,41 @@
+\doxysection{geometry.\+h}
+\hypertarget{geometry_8h_source}{}\label{geometry_8h_source}\index{include/geometry.h@{include/geometry.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_point_ad92f2337b839a94ce97dcdb439b4325a}{Point}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_point_a8c779e11e694b20e0946105a9f5de842}{x}};\ }
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_point_a2e1b5fb2b2a83571f5c0bc0f66a73cf7}{y}};\ }
+\DoxyCodeLine{00016\ \ \ \ \ \mbox{\hyperlink{class_point_ad92f2337b839a94ce97dcdb439b4325a}{Point}}();}
+\DoxyCodeLine{00022\ \ \ \ \ \mbox{\hyperlink{class_point_a001c4958c310b248f5c26037aea38a9c}{Point}}(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_point_a8c779e11e694b20e0946105a9f5de842}{x}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_point_a2e1b5fb2b2a83571f5c0bc0f66a73cf7}{y}});}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_point_a6a306c072ba949017332d99b87e73db8}{operator<}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point_ad92f2337b839a94ce97dcdb439b4325a}{Point}}\ \&other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_point_a9c29cd36d1ce448b8e1e56a204fe2b95}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point_ad92f2337b839a94ce97dcdb439b4325a}{Point}}\ \&other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\ \&\mbox{\hyperlink{class_point_ab322db2b5457c54c9b959c6336792d2d}{operator<<}}(std::ostream\ \&os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_point_ad92f2337b839a94ce97dcdb439b4325a}{Point}}\ \&p);}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{friend}\ std::istream\ \&\mbox{\hyperlink{class_point_a4e0f326c4c7e88f4b3e223a62348bd36}{operator>>}}(std::istream\ \&is,\ \mbox{\hyperlink{class_point_ad92f2337b839a94ce97dcdb439b4325a}{Point}}\ \&p);}
+\DoxyCodeLine{00049\ \};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_rectangle_a8a933e0ebd9e80ce91e61ffe87fd577e}{Rectangle}}}
+\DoxyCodeLine{00056\ \{}
+\DoxyCodeLine{00057\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00058\ \ \ \ \ \mbox{\hyperlink{class_point}{Point}}\ \mbox{\hyperlink{class_rectangle_a5c37d1f5a8674cd438e59e0686be1976}{top\_left}};\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_rectangle_a019ed802523594472e0032953b6062d4}{width}};\ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_rectangle_ac564db1ed0dd61dd82a5276399bc72ad}{height}};\ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \ \ \mbox{\hyperlink{class_rectangle_a8a933e0ebd9e80ce91e61ffe87fd577e}{Rectangle}}();}
+\DoxyCodeLine{00072\ \ \ \ \ \mbox{\hyperlink{class_rectangle_a1546993e9fc10b8d128f4a85ed68c653}{Rectangle}}(\textcolor{keywordtype}{int}\ x,\ \textcolor{keywordtype}{int}\ y,\ \textcolor{keywordtype}{int}\ w,\ \textcolor{keywordtype}{int}\ h);}
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{class_rectangle_ae51a0157bed7f785f2b4375a7be97eb6}{Rectangle}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\ \&p,\ \textcolor{keywordtype}{int}\ w,\ \textcolor{keywordtype}{int}\ h);}
+\DoxyCodeLine{00085\ \ \ \ \ \mbox{\hyperlink{class_rectangle_a2c070b3e1906f183cad212e9e0c4242a}{Rectangle}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\ \&\mbox{\hyperlink{class_rectangle_a5c37d1f5a8674cd438e59e0686be1976}{top\_left}},\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_point}{Point}}\ \&bottom\_right);}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\ \&\mbox{\hyperlink{class_rectangle_adf5c9bff7e7878bc7cb8820ea3d0e185}{operator<<}}(std::ostream\ \&os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_rectangle_a8a933e0ebd9e80ce91e61ffe87fd577e}{Rectangle}}\ \&p);}
+\DoxyCodeLine{00099\ \ \ \ \ \textcolor{keyword}{friend}\ std::istream\ \&\mbox{\hyperlink{class_rectangle_a17542e1253118561ea29550bac5a6c1f}{operator>>}}(std::istream\ \&is,\ \mbox{\hyperlink{class_rectangle_a8a933e0ebd9e80ce91e61ffe87fd577e}{Rectangle}}\ \&p);}
+\DoxyCodeLine{00104\ \ \ \ \ std::pair<Point,\ Point>\ \mbox{\hyperlink{class_rectangle_a3f1a27d88098449f288bd5efb21c6f17}{getCorners}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00110\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_rectangle_ae2c7aecf4c4fa6ee51bfc7430f70474e}{operator==}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_rectangle_a8a933e0ebd9e80ce91e61ffe87fd577e}{Rectangle}}\ \&other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{class_rectangle_a8a933e0ebd9e80ce91e61ffe87fd577e}{Rectangle}}\ \mbox{\hyperlink{class_rectangle_a8c74f5fe501ec3746f11dc44d642feb4}{operator+}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ scalar)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00122\ \ \ \ \ \mbox{\hyperlink{class_rectangle_a8a933e0ebd9e80ce91e61ffe87fd577e}{Rectangle}}\ \mbox{\hyperlink{class_rectangle_a0500a0349716ffaa0ce891ece7ab5426}{operator-\/}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ scalar)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00128\ \ \ \ \ \mbox{\hyperlink{class_rectangle_a8a933e0ebd9e80ce91e61ffe87fd577e}{Rectangle}}\ \mbox{\hyperlink{class_rectangle_a0cc4c99f47020e7b11a64bb4ed478db4}{operator\&}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_rectangle_a8a933e0ebd9e80ce91e61ffe87fd577e}{Rectangle}}\ \&other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00134\ \ \ \ \ \mbox{\hyperlink{class_rectangle_a8a933e0ebd9e80ce91e61ffe87fd577e}{Rectangle}}\ \mbox{\hyperlink{class_rectangle_a268e228beaefc56bf770d549f1514aa1}{operator|}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_rectangle_a8a933e0ebd9e80ce91e61ffe87fd577e}{Rectangle}}\ \&other)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00135\ \};}
+
+\end{DoxyCode}

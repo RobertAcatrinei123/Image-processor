@@ -39,4 +39,8 @@ llvm_lcov: run_coverage
 leaks:
 	leaks -atExit -- ./$(TARGET)
 
+docs:
+	doxygen Doxyfile
+	firebase deploy
+
 .PHONY: all clean obj run_coverage llvm_coverage_report llvm_lcov

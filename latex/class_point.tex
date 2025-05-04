@@ -1,0 +1,150 @@
+\doxysection{Point Class Reference}
+\hypertarget{class_point}{}\label{class_point}\index{Point@{Point}}
+
+
+Represents a 2D point with integer coordinates.  
+
+
+
+
+{\ttfamily \#include $<$geometry.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_point_ad92f2337b839a94ce97dcdb439b4325a}\label{class_point_ad92f2337b839a94ce97dcdb439b4325a} 
+{\bfseries Point} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Initializes point to (0, 0). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_point_a001c4958c310b248f5c26037aea38a9c}{Point}} (int \mbox{\hyperlink{class_point_a8c779e11e694b20e0946105a9f5de842}{x}}, int \mbox{\hyperlink{class_point_a2e1b5fb2b2a83571f5c0bc0f66a73cf7}{y}})
+\begin{DoxyCompactList}\small\item\em Constructs a point with given coordinates. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_point_a6a306c072ba949017332d99b87e73db8}{operator$<$}} (const \mbox{\hyperlink{class_point}{Point}} \&other) const
+\begin{DoxyCompactList}\small\item\em Less-\/than operator for comparison. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_point_a9c29cd36d1ce448b8e1e56a204fe2b95}{operator==}} (const \mbox{\hyperlink{class_point}{Point}} \&other) const
+\begin{DoxyCompactList}\small\item\em Equality operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_point_a8c779e11e694b20e0946105a9f5de842}\label{class_point_a8c779e11e694b20e0946105a9f5de842} 
+int {\bfseries x}
+\begin{DoxyCompactList}\small\item\em X coordinate. \end{DoxyCompactList}\item 
+\Hypertarget{class_point_a2e1b5fb2b2a83571f5c0bc0f66a73cf7}\label{class_point_a2e1b5fb2b2a83571f5c0bc0f66a73cf7} 
+int {\bfseries y}
+\begin{DoxyCompactList}\small\item\em Y coordinate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_point_ab322db2b5457c54c9b959c6336792d2d}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_point}{Point}} \&p)
+\begin{DoxyCompactList}\small\item\em Output stream operator. \end{DoxyCompactList}\item 
+std\+::istream \& \mbox{\hyperlink{class_point_a4e0f326c4c7e88f4b3e223a62348bd36}{operator$>$$>$}} (std\+::istream \&is, \mbox{\hyperlink{class_point}{Point}} \&p)
+\begin{DoxyCompactList}\small\item\em Input stream operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a 2D point with integer coordinates. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_point_a001c4958c310b248f5c26037aea38a9c}\index{Point@{Point}!Point@{Point}}
+\index{Point@{Point}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{Point()}{Point()}}
+{\footnotesize\ttfamily \label{class_point_a001c4958c310b248f5c26037aea38a9c} 
+Point\+::\+Point (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a point with given coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate \\
+\hline
+{\em y} & Y coordinate \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_point_a6a306c072ba949017332d99b87e73db8}\index{Point@{Point}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily \label{class_point_a6a306c072ba949017332d99b87e73db8} 
+bool Point\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{other}{}\end{DoxyParamCaption}) const}
+
+
+
+Less-\/than operator for comparison. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \doxylink{class_point}{Point} to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if this point is less than other 
+\end{DoxyReturn}
+\Hypertarget{class_point_a9c29cd36d1ce448b8e1e56a204fe2b95}\index{Point@{Point}!operator==@{operator==}}
+\index{operator==@{operator==}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{class_point_a9c29cd36d1ce448b8e1e56a204fe2b95} 
+bool Point\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{other}{}\end{DoxyParamCaption}) const}
+
+
+
+Equality operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \doxylink{class_point}{Point} to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if points are equal 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_point_ab322db2b5457c54c9b959c6336792d2d}\index{Point@{Point}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \label{class_point_ab322db2b5457c54c9b959c6336792d2d} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{, }\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Output stream operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Output stream \\
+\hline
+{\em p} & \doxylink{class_point}{Point} to output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to output stream 
+\end{DoxyReturn}
+\Hypertarget{class_point_a4e0f326c4c7e88f4b3e223a62348bd36}\index{Point@{Point}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Point@{Point}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily \label{class_point_a4e0f326c4c7e88f4b3e223a62348bd36} 
+std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is}{, }\item[{\mbox{\hyperlink{class_point}{Point}} \&}]{p}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Input stream operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is} & Input stream \\
+\hline
+{\em p} & \doxylink{class_point}{Point} to input \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to input stream 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/geometry.\+h\item 
+src/geometry.\+cpp\end{DoxyCompactItemize}

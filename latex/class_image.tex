@@ -1,0 +1,685 @@
+\doxysection{Image Class Reference}
+\hypertarget{class_image}{}\label{class_image}\index{Image@{Image}}
+
+
+Represents a grayscale image and provides image manipulation methods.  
+
+
+
+
+{\ttfamily \#include $<$image.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_image_a58edd1c45b4faeb5f789b0d036d02313}\label{class_image_a58edd1c45b4faeb5f789b0d036d02313} 
+{\bfseries Image} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Creates an empty image. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_image_a05c964ca59502cc32c30e8ab89b5e920}{Image}} (int w, int h)
+\begin{DoxyCompactList}\small\item\em Constructs an image with given width and height. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_image_a5a3bc57bd7ba53f9ae55b1963b9ba0a1}{Image}} (const \mbox{\hyperlink{class_image}{Image}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+\Hypertarget{class_image_a0294f63700543e11c0f0da85601c7ae5}\label{class_image_a0294f63700543e11c0f0da85601c7ae5} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Image} ()
+\begin{DoxyCompactList}\small\item\em Destructor. Releases memory. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_image}{Image}} \& \mbox{\hyperlink{class_image_a3037a583d17594b1835d9b6b8d09875c}{operator=}} (const \mbox{\hyperlink{class_image}{Image}} \&other)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_image_ae533bfa2a8ddf6719e227c68bfcaa42e}{width}} () const
+\begin{DoxyCompactList}\small\item\em Returns the width of the image. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_image_a000645ffdca3b8260ddda3932b56b9d4}{height}} () const
+\begin{DoxyCompactList}\small\item\em Returns the height of the image. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_size}{Size}} \mbox{\hyperlink{class_image_a8aa00d3217972b99d7e24ad79beb9148}{size}} () const
+\begin{DoxyCompactList}\small\item\em Returns the size of the image. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_image_a9b3a60bfd03ca78eb8f497c27f979b26}{save}} (const std\+::string \&filename) const
+\begin{DoxyCompactList}\small\item\em Saves the image to a file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_image_ad5557cdd4e3ff3da5fd01e35f965a006}{load}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Loads the image from a file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_image}{Image}} \mbox{\hyperlink{class_image_a9593fa0b9bdde26486b48435736b6a8c}{operator+}} (const \mbox{\hyperlink{class_image}{Image}} \&other) const
+\begin{DoxyCompactList}\small\item\em Adds two images. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_image}{Image}} \mbox{\hyperlink{class_image_ab8b6fbf7b561ed6829ceab005f201094}{operator-\/}} (const \mbox{\hyperlink{class_image}{Image}} \&other) const
+\begin{DoxyCompactList}\small\item\em Subtracts another image from this image. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_image}{Image}} \mbox{\hyperlink{class_image_ad642f87d45a521a0b2f5259bace9d353}{operator+=}} (const \mbox{\hyperlink{class_image}{Image}} \&other)
+\begin{DoxyCompactList}\small\item\em Adds another image to this image in-\/place. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_image}{Image}} \mbox{\hyperlink{class_image_ad4569067b4f487f4be036265f5797182}{operator-\/=}} (const \mbox{\hyperlink{class_image}{Image}} \&other)
+\begin{DoxyCompactList}\small\item\em Subtracts another image from this image in-\/place. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_image}{Image}} \mbox{\hyperlink{class_image_aa185732144d4c30d455499b1a93ad9ce}{operator\texorpdfstring{$\ast$}{*}}} (const int scalar) const
+\begin{DoxyCompactList}\small\item\em Multiplies the image by a scalar. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_image}{Image}} \mbox{\hyperlink{class_image_ac6357055758afe78dbd6d8c01e31beaa}{operator+}} (const int scalar) const
+\begin{DoxyCompactList}\small\item\em Adds a scalar to the image. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_image}{Image}} \mbox{\hyperlink{class_image_aefea5c8ce9b47ff06f70b3994b24c98d}{operator-\/}} (const int scalar) const
+\begin{DoxyCompactList}\small\item\em Subtracts a scalar from the image. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_image}{Image}} \mbox{\hyperlink{class_image_a1e2aef6f95ca2bc433a761bb4c7b5b28}{operator+=}} (const int scalar)
+\begin{DoxyCompactList}\small\item\em Adds a scalar to the image in-\/place. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_image}{Image}} \mbox{\hyperlink{class_image_a723919374e7d8a974733da2004efeb79}{operator-\/=}} (const int scalar)
+\begin{DoxyCompactList}\small\item\em Subtracts a scalar from the image in-\/place. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_image}{Image}} \mbox{\hyperlink{class_image_a5ab62dba85de0da5b29d8772549dbb9e}{operator\texorpdfstring{$\ast$}{*}=}} (const int scalar) const
+\begin{DoxyCompactList}\small\item\em Multiplies the image by a scalar in-\/place. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_image_a65865b76fd2a4273fd0c7e14b75e8549}{operator==}} (const \mbox{\hyperlink{class_image}{Image}} \&other) const
+\begin{DoxyCompactList}\small\item\em Checks if two images are equal. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_image_a438a06bd39201943dc2d9e5870acddd7}{operator!=}} (const \mbox{\hyperlink{class_image}{Image}} \&other) const
+\begin{DoxyCompactList}\small\item\em Checks if two images are not equal. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_image_aae754b09e597be88fa8c900b82456df5}{empty}} () const
+\begin{DoxyCompactList}\small\item\em Checks if the image is empty. \end{DoxyCompactList}\item 
+unsigned char \& \mbox{\hyperlink{class_image_afd4e2d330a40fce3f1bc9c6eefaa40b7}{at}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Returns a reference to the pixel at (x, y). \end{DoxyCompactList}\item 
+unsigned char \& \mbox{\hyperlink{class_image_a0c6bcb28830653e5da8e8a6389be14a4}{at}} (const \mbox{\hyperlink{class_point}{Point}} \&p)
+\begin{DoxyCompactList}\small\item\em Returns a reference to the pixel at a given point. \end{DoxyCompactList}\item 
+unsigned char \mbox{\hyperlink{class_image_af585e8e4d122559cb0f34cfcb75f8b01}{get\+At}} (int x, int y, bool pad=false) const
+\begin{DoxyCompactList}\small\item\em Gets the pixel value at (x, y), with optional padding. \end{DoxyCompactList}\item 
+unsigned char \mbox{\hyperlink{class_image_a0cdf208e6e245172497f49116aae3ffc}{get\+At}} (const \mbox{\hyperlink{class_point}{Point}} \&p, bool pad=false) const
+\begin{DoxyCompactList}\small\item\em Gets the pixel value at a given point, with optional padding. \end{DoxyCompactList}\item 
+unsigned char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_image_ad1cf39918720da8495d79e4ebe6e98b5}{row}} (int y)
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the row at y. \end{DoxyCompactList}\item 
+\Hypertarget{class_image_aa4d8a644bef789d80d9b6e7fed78ca5a}\label{class_image_aa4d8a644bef789d80d9b6e7fed78ca5a} 
+void {\bfseries release} ()
+\begin{DoxyCompactList}\small\item\em Releases the image data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_image}{Image}} \mbox{\hyperlink{class_image_af6eff96eb45b8cdf7c9ad5553bb402ad}{ROI}} (const \mbox{\hyperlink{class_rectangle}{Rectangle}} \&r) const
+\begin{DoxyCompactList}\small\item\em Returns a region of interest (ROI) as a new image. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_image}{Image}} \mbox{\hyperlink{class_image_a22faf2f60fd573e0339b4e965c1210d8}{ROI}} (int x, int y, int w, int h) const
+\begin{DoxyCompactList}\small\item\em Returns a region of interest (ROI) as a new image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_image}{Image}} \mbox{\hyperlink{class_image_ac6d96ab9a956b580531e047216fde2ec}{zeros}} (int w, int h)
+\begin{DoxyCompactList}\small\item\em Creates a zero-\/filled image. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_image}{Image}} \mbox{\hyperlink{class_image_a62432441efe82661ce6dd7563b393027}{ones}} (int w, int h)
+\begin{DoxyCompactList}\small\item\em Creates a one-\/filled image. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_image_a6a9cea0602a28d7060b771cb99eb3030}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{class_image}{Image}} \&img)
+\begin{DoxyCompactList}\small\item\em Writes the image to an output stream. \end{DoxyCompactList}\item 
+std\+::istream \& \mbox{\hyperlink{class_image_a86c9792d16a83bed35cfec6f62746df7}{operator$>$$>$}} (std\+::istream \&is, \mbox{\hyperlink{class_image}{Image}} \&img)
+\begin{DoxyCompactList}\small\item\em Reads the image from an input stream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a grayscale image and provides image manipulation methods. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_image_a05c964ca59502cc32c30e8ab89b5e920}\index{Image@{Image}!Image@{Image}}
+\index{Image@{Image}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{Image()}{Image()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_image_a05c964ca59502cc32c30e8ab89b5e920} 
+Image\+::\+Image (\begin{DoxyParamCaption}\item[{int}]{w}{, }\item[{int}]{h}{}\end{DoxyParamCaption})}
+
+
+
+Constructs an image with given width and height. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & Width \\
+\hline
+{\em h} & Height \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_image_a5a3bc57bd7ba53f9ae55b1963b9ba0a1}\index{Image@{Image}!Image@{Image}}
+\index{Image@{Image}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{Image()}{Image()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_image_a5a3bc57bd7ba53f9ae55b1963b9ba0a1} 
+Image\+::\+Image (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_image}{Image}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \doxylink{class_image}{Image} to copy \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_image_a0c6bcb28830653e5da8e8a6389be14a4}\index{Image@{Image}!at@{at}}
+\index{at@{at}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_image_a0c6bcb28830653e5da8e8a6389be14a4} 
+unsigned char \& Image\+::at (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Returns a reference to the pixel at a given point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & \doxylink{class_point}{Point} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to pixel value 
+\end{DoxyReturn}
+\Hypertarget{class_image_afd4e2d330a40fce3f1bc9c6eefaa40b7}\index{Image@{Image}!at@{at}}
+\index{at@{at}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_image_afd4e2d330a40fce3f1bc9c6eefaa40b7} 
+unsigned char \& Image\+::at (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Returns a reference to the pixel at (x, y). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate \\
+\hline
+{\em y} & Y coordinate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to pixel value 
+\end{DoxyReturn}
+\Hypertarget{class_image_aae754b09e597be88fa8c900b82456df5}\index{Image@{Image}!empty@{empty}}
+\index{empty@{empty}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily \label{class_image_aae754b09e597be88fa8c900b82456df5} 
+bool Image\+::empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if the image is empty. 
+
+\begin{DoxyReturn}{Returns}
+True if empty, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{class_image_a0cdf208e6e245172497f49116aae3ffc}\index{Image@{Image}!getAt@{getAt}}
+\index{getAt@{getAt}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{getAt()}{getAt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_image_a0cdf208e6e245172497f49116aae3ffc} 
+unsigned char Image\+::get\+At (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{p}{, }\item[{bool}]{pad}{ = {\ttfamily false}}\end{DoxyParamCaption}) const}
+
+
+
+Gets the pixel value at a given point, with optional padding. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & \doxylink{class_point}{Point} \\
+\hline
+{\em pad} & If true, pads out-\/of-\/bounds with 0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pixel value 
+\end{DoxyReturn}
+\Hypertarget{class_image_af585e8e4d122559cb0f34cfcb75f8b01}\index{Image@{Image}!getAt@{getAt}}
+\index{getAt@{getAt}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{getAt()}{getAt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_image_af585e8e4d122559cb0f34cfcb75f8b01} 
+unsigned char Image\+::get\+At (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{bool}]{pad}{ = {\ttfamily false}}\end{DoxyParamCaption}) const}
+
+
+
+Gets the pixel value at (x, y), with optional padding. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate \\
+\hline
+{\em y} & Y coordinate \\
+\hline
+{\em pad} & If true, pads out-\/of-\/bounds with 0 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pixel value 
+\end{DoxyReturn}
+\Hypertarget{class_image_a000645ffdca3b8260ddda3932b56b9d4}\index{Image@{Image}!height@{height}}
+\index{height@{height}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{height()}{height()}}
+{\footnotesize\ttfamily \label{class_image_a000645ffdca3b8260ddda3932b56b9d4} 
+int Image\+::height (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the height of the image. 
+
+\begin{DoxyReturn}{Returns}
+Height 
+\end{DoxyReturn}
+\Hypertarget{class_image_ad5557cdd4e3ff3da5fd01e35f965a006}\index{Image@{Image}!load@{load}}
+\index{load@{load}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily \label{class_image_ad5557cdd4e3ff3da5fd01e35f965a006} 
+bool Image\+::load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption})}
+
+
+
+Loads the image from a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Input file name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if successful, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{class_image_a62432441efe82661ce6dd7563b393027}\index{Image@{Image}!ones@{ones}}
+\index{ones@{ones}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{ones()}{ones()}}
+{\footnotesize\ttfamily \label{class_image_a62432441efe82661ce6dd7563b393027} 
+\mbox{\hyperlink{class_image}{Image}} Image\+::ones (\begin{DoxyParamCaption}\item[{int}]{w}{, }\item[{int}]{h}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a one-\/filled image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & Width \\
+\hline
+{\em h} & Height \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+One-\/filled image 
+\end{DoxyReturn}
+\Hypertarget{class_image_a438a06bd39201943dc2d9e5870acddd7}\index{Image@{Image}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \label{class_image_a438a06bd39201943dc2d9e5870acddd7} 
+bool Image\+::operator!= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_image}{Image}} \&}]{other}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if two images are not equal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \doxylink{class_image}{Image} to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if not equal, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{class_image_aa185732144d4c30d455499b1a93ad9ce}\index{Image@{Image}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \label{class_image_aa185732144d4c30d455499b1a93ad9ce} 
+\mbox{\hyperlink{class_image}{Image}} Image\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const int}]{scalar}{}\end{DoxyParamCaption}) const}
+
+
+
+Multiplies the image by a scalar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & Scalar value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Resulting image 
+\end{DoxyReturn}
+\Hypertarget{class_image_a5ab62dba85de0da5b29d8772549dbb9e}\index{Image@{Image}!operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}}
+\index{operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}=()}{operator*=()}}
+{\footnotesize\ttfamily \label{class_image_a5ab62dba85de0da5b29d8772549dbb9e} 
+\mbox{\hyperlink{class_image}{Image}} Image\+::operator\texorpdfstring{$\ast$}{*}= (\begin{DoxyParamCaption}\item[{const int}]{scalar}{}\end{DoxyParamCaption}) const}
+
+
+
+Multiplies the image by a scalar in-\/place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & Scalar value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to this image 
+\end{DoxyReturn}
+\Hypertarget{class_image_a9593fa0b9bdde26486b48435736b6a8c}\index{Image@{Image}!operator+@{operator+}}
+\index{operator+@{operator+}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_image_a9593fa0b9bdde26486b48435736b6a8c} 
+\mbox{\hyperlink{class_image}{Image}} Image\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_image}{Image}} \&}]{other}{}\end{DoxyParamCaption}) const}
+
+
+
+Adds two images. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \doxylink{class_image}{Image} to add \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Resulting image 
+\end{DoxyReturn}
+\Hypertarget{class_image_ac6357055758afe78dbd6d8c01e31beaa}\index{Image@{Image}!operator+@{operator+}}
+\index{operator+@{operator+}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_image_ac6357055758afe78dbd6d8c01e31beaa} 
+\mbox{\hyperlink{class_image}{Image}} Image\+::operator+ (\begin{DoxyParamCaption}\item[{const int}]{scalar}{}\end{DoxyParamCaption}) const}
+
+
+
+Adds a scalar to the image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & Scalar value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Resulting image 
+\end{DoxyReturn}
+\Hypertarget{class_image_ad642f87d45a521a0b2f5259bace9d353}\index{Image@{Image}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_image_ad642f87d45a521a0b2f5259bace9d353} 
+\mbox{\hyperlink{class_image}{Image}} Image\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_image}{Image}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Adds another image to this image in-\/place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \doxylink{class_image}{Image} to add \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to this image 
+\end{DoxyReturn}
+\Hypertarget{class_image_a1e2aef6f95ca2bc433a761bb4c7b5b28}\index{Image@{Image}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_image_a1e2aef6f95ca2bc433a761bb4c7b5b28} 
+\mbox{\hyperlink{class_image}{Image}} Image\+::operator+= (\begin{DoxyParamCaption}\item[{const int}]{scalar}{}\end{DoxyParamCaption})}
+
+
+
+Adds a scalar to the image in-\/place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & Scalar value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to this image 
+\end{DoxyReturn}
+\Hypertarget{class_image_ab8b6fbf7b561ed6829ceab005f201094}\index{Image@{Image}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_image_ab8b6fbf7b561ed6829ceab005f201094} 
+\mbox{\hyperlink{class_image}{Image}} Image\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_image}{Image}} \&}]{other}{}\end{DoxyParamCaption}) const}
+
+
+
+Subtracts another image from this image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \doxylink{class_image}{Image} to subtract \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Resulting image 
+\end{DoxyReturn}
+\Hypertarget{class_image_aefea5c8ce9b47ff06f70b3994b24c98d}\index{Image@{Image}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_image_aefea5c8ce9b47ff06f70b3994b24c98d} 
+\mbox{\hyperlink{class_image}{Image}} Image\+::operator-\/ (\begin{DoxyParamCaption}\item[{const int}]{scalar}{}\end{DoxyParamCaption}) const}
+
+
+
+Subtracts a scalar from the image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & Scalar value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Resulting image 
+\end{DoxyReturn}
+\Hypertarget{class_image_ad4569067b4f487f4be036265f5797182}\index{Image@{Image}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_image_ad4569067b4f487f4be036265f5797182} 
+\mbox{\hyperlink{class_image}{Image}} Image\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_image}{Image}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Subtracts another image from this image in-\/place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \doxylink{class_image}{Image} to subtract \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to this image 
+\end{DoxyReturn}
+\Hypertarget{class_image_a723919374e7d8a974733da2004efeb79}\index{Image@{Image}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_image_a723919374e7d8a974733da2004efeb79} 
+\mbox{\hyperlink{class_image}{Image}} Image\+::operator-\/= (\begin{DoxyParamCaption}\item[{const int}]{scalar}{}\end{DoxyParamCaption})}
+
+
+
+Subtracts a scalar from the image in-\/place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & Scalar value \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to this image 
+\end{DoxyReturn}
+\Hypertarget{class_image_a3037a583d17594b1835d9b6b8d09875c}\index{Image@{Image}!operator=@{operator=}}
+\index{operator=@{operator=}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{class_image_a3037a583d17594b1835d9b6b8d09875c} 
+\mbox{\hyperlink{class_image}{Image}} \& Image\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_image}{Image}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \doxylink{class_image}{Image} to assign from \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to this image 
+\end{DoxyReturn}
+\Hypertarget{class_image_a65865b76fd2a4273fd0c7e14b75e8549}\index{Image@{Image}!operator==@{operator==}}
+\index{operator==@{operator==}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{class_image_a65865b76fd2a4273fd0c7e14b75e8549} 
+bool Image\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_image}{Image}} \&}]{other}{}\end{DoxyParamCaption}) const}
+
+
+
+Checks if two images are equal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & \doxylink{class_image}{Image} to compare \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if equal, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{class_image_af6eff96eb45b8cdf7c9ad5553bb402ad}\index{Image@{Image}!ROI@{ROI}}
+\index{ROI@{ROI}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{ROI()}{ROI()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_image_af6eff96eb45b8cdf7c9ad5553bb402ad} 
+\mbox{\hyperlink{class_image}{Image}} Image\+::\+ROI (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_rectangle}{Rectangle}} \&}]{r}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a region of interest (ROI) as a new image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & \doxylink{class_rectangle}{Rectangle} defining the ROI \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ROI image 
+\end{DoxyReturn}
+\Hypertarget{class_image_a22faf2f60fd573e0339b4e965c1210d8}\index{Image@{Image}!ROI@{ROI}}
+\index{ROI@{ROI}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{ROI()}{ROI()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_image_a22faf2f60fd573e0339b4e965c1210d8} 
+\mbox{\hyperlink{class_image}{Image}} Image\+::\+ROI (\begin{DoxyParamCaption}\item[{int}]{x}{, }\item[{int}]{y}{, }\item[{int}]{w}{, }\item[{int}]{h}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns a region of interest (ROI) as a new image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & X coordinate \\
+\hline
+{\em y} & Y coordinate \\
+\hline
+{\em w} & Width \\
+\hline
+{\em h} & Height \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ROI image 
+\end{DoxyReturn}
+\Hypertarget{class_image_ad1cf39918720da8495d79e4ebe6e98b5}\index{Image@{Image}!row@{row}}
+\index{row@{row}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{row()}{row()}}
+{\footnotesize\ttfamily \label{class_image_ad1cf39918720da8495d79e4ebe6e98b5} 
+unsigned char \texorpdfstring{$\ast$}{*} Image\+::row (\begin{DoxyParamCaption}\item[{int}]{y}{}\end{DoxyParamCaption})}
+
+
+
+Returns a pointer to the row at y. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em y} & Row index \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to row 
+\end{DoxyReturn}
+\Hypertarget{class_image_a9b3a60bfd03ca78eb8f497c27f979b26}\index{Image@{Image}!save@{save}}
+\index{save@{save}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily \label{class_image_a9b3a60bfd03ca78eb8f497c27f979b26} 
+bool Image\+::save (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename}{}\end{DoxyParamCaption}) const}
+
+
+
+Saves the image to a file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & Output file name \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if successful, false otherwise 
+\end{DoxyReturn}
+\Hypertarget{class_image_a8aa00d3217972b99d7e24ad79beb9148}\index{Image@{Image}!size@{size}}
+\index{size@{size}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \label{class_image_a8aa00d3217972b99d7e24ad79beb9148} 
+\mbox{\hyperlink{class_size}{Size}} Image\+::size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the size of the image. 
+
+\begin{DoxyReturn}{Returns}
+\doxylink{class_size}{Size} object 
+\end{DoxyReturn}
+\Hypertarget{class_image_ae533bfa2a8ddf6719e227c68bfcaa42e}\index{Image@{Image}!width@{width}}
+\index{width@{width}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{width()}{width()}}
+{\footnotesize\ttfamily \label{class_image_ae533bfa2a8ddf6719e227c68bfcaa42e} 
+int Image\+::width (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Returns the width of the image. 
+
+\begin{DoxyReturn}{Returns}
+Width 
+\end{DoxyReturn}
+\Hypertarget{class_image_ac6d96ab9a956b580531e047216fde2ec}\index{Image@{Image}!zeros@{zeros}}
+\index{zeros@{zeros}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{zeros()}{zeros()}}
+{\footnotesize\ttfamily \label{class_image_ac6d96ab9a956b580531e047216fde2ec} 
+\mbox{\hyperlink{class_image}{Image}} Image\+::zeros (\begin{DoxyParamCaption}\item[{int}]{w}{, }\item[{int}]{h}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a zero-\/filled image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & Width \\
+\hline
+{\em h} & Height \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Zero-\/filled image 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_image_a6a9cea0602a28d7060b771cb99eb3030}\index{Image@{Image}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \label{class_image_a6a9cea0602a28d7060b771cb99eb3030} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os}{, }\item[{const \mbox{\hyperlink{class_image}{Image}} \&}]{img}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Writes the image to an output stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & Output stream \\
+\hline
+{\em img} & \doxylink{class_image}{Image} to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to output stream 
+\end{DoxyReturn}
+\Hypertarget{class_image_a86c9792d16a83bed35cfec6f62746df7}\index{Image@{Image}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Image@{Image}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily \label{class_image_a86c9792d16a83bed35cfec6f62746df7} 
+std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is}{, }\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{img}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Reads the image from an input stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em is} & Input stream \\
+\hline
+{\em img} & \doxylink{class_image}{Image} to read into \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Reference to input stream 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/image.\+h\item 
+src/image.\+cpp\end{DoxyCompactItemize}

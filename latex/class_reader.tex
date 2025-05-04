@@ -1,0 +1,61 @@
+\doxysection{Reader Class Reference}
+\hypertarget{class_reader}{}\label{class_reader}\index{Reader@{Reader}}
+
+
+Utility class for reading integers from a stream, skipping comments and whitespace.  
+
+
+
+
+{\ttfamily \#include $<$reader.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_reader_aec11eadea13ef93d3bd0db9ad57f0832}{Reader}} (const std\+::istream \&ifs)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{class_reader}{Reader} for the given input stream. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_reader_a3080e8a278d302268d227c973c460790}{next\+Int}} ()
+\begin{DoxyCompactList}\small\item\em Reads the next integer from the stream, skipping comments and whitespace. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utility class for reading integers from a stream, skipping comments and whitespace. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_reader_aec11eadea13ef93d3bd0db9ad57f0832}\index{Reader@{Reader}!Reader@{Reader}}
+\index{Reader@{Reader}!Reader@{Reader}}
+\doxysubsubsection{\texorpdfstring{Reader()}{Reader()}}
+{\footnotesize\ttfamily \label{class_reader_aec11eadea13ef93d3bd0db9ad57f0832} 
+Reader\+::\+Reader (\begin{DoxyParamCaption}\item[{const std\+::istream \&}]{ifs}{}\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{class_reader}{Reader} for the given input stream. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ifs} & Input stream \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_reader_a3080e8a278d302268d227c973c460790}\index{Reader@{Reader}!nextInt@{nextInt}}
+\index{nextInt@{nextInt}!Reader@{Reader}}
+\doxysubsubsection{\texorpdfstring{nextInt()}{nextInt()}}
+{\footnotesize\ttfamily \label{class_reader_a3080e8a278d302268d227c973c460790} 
+int Reader\+::next\+Int (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Reads the next integer from the stream, skipping comments and whitespace. 
+
+\begin{DoxyReturn}{Returns}
+The next integer 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/reader.\+h\item 
+src/reader.\+cpp\end{DoxyCompactItemize}

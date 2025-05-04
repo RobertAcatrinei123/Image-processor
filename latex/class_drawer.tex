@@ -1,0 +1,116 @@
+\doxysection{Drawer Class Reference}
+\hypertarget{class_drawer}{}\label{class_drawer}\index{Drawer@{Drawer}}
+
+
+Provides static methods for drawing shapes on images.  
+
+
+
+
+{\ttfamily \#include $<$drawer.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_drawer_a3498f414be71f4f4d0226eb98087efb1}{draw\+Circle}} (\mbox{\hyperlink{class_image}{Image}} \&img, const \mbox{\hyperlink{class_point}{Point}} \&center, int radius, unsigned char color)
+\begin{DoxyCompactList}\small\item\em Draws a circle on an image. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_drawer_a91bca580a008154a67d3b1252aa5e518}{draw\+Line}} (\mbox{\hyperlink{class_image}{Image}} \&img, const \mbox{\hyperlink{class_point}{Point}} \&p1, const \mbox{\hyperlink{class_point}{Point}} \&p2, unsigned char color)
+\begin{DoxyCompactList}\small\item\em Draws a line on an image. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_drawer_a5d262267b83cf4dfbda2e2ca85dac03d}{draw\+Rectangle}} (\mbox{\hyperlink{class_image}{Image}} \&img, const \mbox{\hyperlink{class_rectangle}{Rectangle}} \&rect, unsigned char color)
+\begin{DoxyCompactList}\small\item\em Draws a rectangle on an image. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_drawer_ab92c9b9af9d8b06eb1ee01a80695aca5}{draw\+Rectangle}} (\mbox{\hyperlink{class_image}{Image}} \&img, const \mbox{\hyperlink{class_point}{Point}} \&top\+\_\+left, const \mbox{\hyperlink{class_point}{Point}} \&bottom\+\_\+right, unsigned char color)
+\begin{DoxyCompactList}\small\item\em Draws a rectangle on an image using two points. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Provides static methods for drawing shapes on images. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_drawer_a3498f414be71f4f4d0226eb98087efb1}\index{Drawer@{Drawer}!drawCircle@{drawCircle}}
+\index{drawCircle@{drawCircle}!Drawer@{Drawer}}
+\doxysubsubsection{\texorpdfstring{drawCircle()}{drawCircle()}}
+{\footnotesize\ttfamily \label{class_drawer_a3498f414be71f4f4d0226eb98087efb1} 
+void Drawer\+::draw\+Circle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{img}{, }\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{center}{, }\item[{int}]{radius}{, }\item[{unsigned char}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Draws a circle on an image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img} & \doxylink{class_image}{Image} to draw on \\
+\hline
+{\em center} & Center of the circle \\
+\hline
+{\em radius} & Radius of the circle \\
+\hline
+{\em color} & Color of the circle \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_drawer_a91bca580a008154a67d3b1252aa5e518}\index{Drawer@{Drawer}!drawLine@{drawLine}}
+\index{drawLine@{drawLine}!Drawer@{Drawer}}
+\doxysubsubsection{\texorpdfstring{drawLine()}{drawLine()}}
+{\footnotesize\ttfamily \label{class_drawer_a91bca580a008154a67d3b1252aa5e518} 
+void Drawer\+::draw\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{img}{, }\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{p1}{, }\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{p2}{, }\item[{unsigned char}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Draws a line on an image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img} & \doxylink{class_image}{Image} to draw on \\
+\hline
+{\em p1} & Starting point \\
+\hline
+{\em p2} & Ending point \\
+\hline
+{\em color} & Color of the line \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_drawer_ab92c9b9af9d8b06eb1ee01a80695aca5}\index{Drawer@{Drawer}!drawRectangle@{drawRectangle}}
+\index{drawRectangle@{drawRectangle}!Drawer@{Drawer}}
+\doxysubsubsection{\texorpdfstring{drawRectangle()}{drawRectangle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_drawer_ab92c9b9af9d8b06eb1ee01a80695aca5} 
+void Drawer\+::draw\+Rectangle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{img}{, }\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{top\+\_\+left}{, }\item[{const \mbox{\hyperlink{class_point}{Point}} \&}]{bottom\+\_\+right}{, }\item[{unsigned char}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Draws a rectangle on an image using two points. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img} & \doxylink{class_image}{Image} to draw on \\
+\hline
+{\em top\+\_\+left} & Top-\/left point \\
+\hline
+{\em bottom\+\_\+right} & Bottom-\/right point \\
+\hline
+{\em color} & Color of the rectangle \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_drawer_a5d262267b83cf4dfbda2e2ca85dac03d}\index{Drawer@{Drawer}!drawRectangle@{drawRectangle}}
+\index{drawRectangle@{drawRectangle}!Drawer@{Drawer}}
+\doxysubsubsection{\texorpdfstring{drawRectangle()}{drawRectangle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_drawer_a5d262267b83cf4dfbda2e2ca85dac03d} 
+void Drawer\+::draw\+Rectangle (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{img}{, }\item[{const \mbox{\hyperlink{class_rectangle}{Rectangle}} \&}]{rect}{, }\item[{unsigned char}]{color}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Draws a rectangle on an image. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em img} & \doxylink{class_image}{Image} to draw on \\
+\hline
+{\em rect} & \doxylink{class_rectangle}{Rectangle} to draw \\
+\hline
+{\em color} & Color of the rectangle \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/drawer.\+h\item 
+src/drawer.\+cpp\end{DoxyCompactItemize}

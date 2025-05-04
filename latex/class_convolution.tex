@@ -1,0 +1,78 @@
+\doxysection{Convolution Class Reference}
+\hypertarget{class_convolution}{}\label{class_convolution}\index{Convolution@{Convolution}}
+
+
+Applies a convolution filter to an image.  
+
+
+
+
+{\ttfamily \#include $<$imgprocessing.\+h$>$}
+
+Inheritance diagram for Convolution\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_convolution}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_convolution_a9fd1a996a2d826c01991e6913f6163bf}\label{class_convolution_a9fd1a996a2d826c01991e6913f6163bf} 
+{\bfseries Convolution} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_convolution_a6c81ce81f5d2d752275c679be4266703}{Convolution}} (Convolution\+Type type)
+\begin{DoxyCompactList}\small\item\em Constructs with a specific convolution type. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_convolution_a4d9d7d0b374d6d05e04d0ba40072ab88}{process}} (const \mbox{\hyperlink{class_image}{Image}} \&src, \mbox{\hyperlink{class_image}{Image}} \&dest) override
+\begin{DoxyCompactList}\small\item\em Processes the image with convolution. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Applies a convolution filter to an image. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_convolution_a6c81ce81f5d2d752275c679be4266703}\index{Convolution@{Convolution}!Convolution@{Convolution}}
+\index{Convolution@{Convolution}!Convolution@{Convolution}}
+\doxysubsubsection{\texorpdfstring{Convolution()}{Convolution()}}
+{\footnotesize\ttfamily \label{class_convolution_a6c81ce81f5d2d752275c679be4266703} 
+Convolution\+::\+Convolution (\begin{DoxyParamCaption}\item[{Convolution\+Type}]{type}{}\end{DoxyParamCaption})}
+
+
+
+Constructs with a specific convolution type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & \doxylink{class_convolution}{Convolution} kernel type \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_convolution_a4d9d7d0b374d6d05e04d0ba40072ab88}\index{Convolution@{Convolution}!process@{process}}
+\index{process@{process}!Convolution@{Convolution}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily \label{class_convolution_a4d9d7d0b374d6d05e04d0ba40072ab88} 
+void Convolution\+::process (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_image}{Image}} \&}]{src}{, }\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{dest}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Processes the image with convolution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Source image \\
+\hline
+{\em dest} & Destination image \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_image_processing_af457a1dcd82a8b0dee3df623228859b0}{Image\+Processing}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/imgprocessing.\+h\item 
+src/imgprocessing.\+cpp\end{DoxyCompactItemize}

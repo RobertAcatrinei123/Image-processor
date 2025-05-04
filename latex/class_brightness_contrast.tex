@@ -1,0 +1,80 @@
+\doxysection{Brightness\+Contrast Class Reference}
+\hypertarget{class_brightness_contrast}{}\label{class_brightness_contrast}\index{BrightnessContrast@{BrightnessContrast}}
+
+
+Adjusts brightness and contrast of an image.  
+
+
+
+
+{\ttfamily \#include $<$imgprocessing.\+h$>$}
+
+Inheritance diagram for Brightness\+Contrast\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_brightness_contrast}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_brightness_contrast_aa64aba4327bc734776df15691d76a415}\label{class_brightness_contrast_aa64aba4327bc734776df15691d76a415} 
+{\bfseries Brightness\+Contrast} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. No adjustment. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_brightness_contrast_a2e7b69e3443dacb410f8cde49dac13d0}{Brightness\+Contrast}} (double alpha, double beta)
+\begin{DoxyCompactList}\small\item\em Constructs with given contrast and brightness. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_brightness_contrast_a6455ad7d624d89958f1bab36ce622819}{process}} (const \mbox{\hyperlink{class_image}{Image}} \&src, \mbox{\hyperlink{class_image}{Image}} \&dest) override
+\begin{DoxyCompactList}\small\item\em Processes the image with brightness/contrast adjustment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Adjusts brightness and contrast of an image. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_brightness_contrast_a2e7b69e3443dacb410f8cde49dac13d0}\index{BrightnessContrast@{BrightnessContrast}!BrightnessContrast@{BrightnessContrast}}
+\index{BrightnessContrast@{BrightnessContrast}!BrightnessContrast@{BrightnessContrast}}
+\doxysubsubsection{\texorpdfstring{BrightnessContrast()}{BrightnessContrast()}}
+{\footnotesize\ttfamily \label{class_brightness_contrast_a2e7b69e3443dacb410f8cde49dac13d0} 
+Brightness\+Contrast\+::\+Brightness\+Contrast (\begin{DoxyParamCaption}\item[{double}]{alpha}{, }\item[{double}]{beta}{}\end{DoxyParamCaption})}
+
+
+
+Constructs with given contrast and brightness. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em alpha} & Contrast \\
+\hline
+{\em beta} & Brightness \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_brightness_contrast_a6455ad7d624d89958f1bab36ce622819}\index{BrightnessContrast@{BrightnessContrast}!process@{process}}
+\index{process@{process}!BrightnessContrast@{BrightnessContrast}}
+\doxysubsubsection{\texorpdfstring{process()}{process()}}
+{\footnotesize\ttfamily \label{class_brightness_contrast_a6455ad7d624d89958f1bab36ce622819} 
+void Brightness\+Contrast\+::process (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_image}{Image}} \&}]{src}{, }\item[{\mbox{\hyperlink{class_image}{Image}} \&}]{dest}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Processes the image with brightness/contrast adjustment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em src} & Source image \\
+\hline
+{\em dest} & Destination image \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_image_processing_af457a1dcd82a8b0dee3df623228859b0}{Image\+Processing}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/imgprocessing.\+h\item 
+src/imgprocessing.\+cpp\end{DoxyCompactItemize}
