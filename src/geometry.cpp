@@ -56,7 +56,7 @@ Rectangle Rectangle::operator&(const Rectangle &other) const
     {
         return Rectangle();
     }
-    return Rectangle(r1.second, r2.first);
+    return Rectangle(r2.first, r1.second);
 }
 
 Rectangle Rectangle::operator|(const Rectangle &other) const
@@ -68,4 +68,14 @@ Rectangle Rectangle::operator|(const Rectangle &other) const
         std::swap(r1, r2);
     }
     return Rectangle(r1.first, r2.second);
+}
+
+bool Rectangle::operator==(const Rectangle &other) const
+{
+    return top_left == other.top_left && width == other.width && height == other.height;
+}
+
+bool Point::operator==(const Point &other) const
+{
+    return x == other.x && y == other.y;
 }

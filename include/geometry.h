@@ -9,6 +9,7 @@ public:
     Point() : x(0), y(0) {}
     Point(int x, int y) : x(x), y(y) {}
     bool operator<(const Point &other) const;
+    bool operator==(const Point &other) const;
     friend std::ostream &operator<<(std::ostream &os, const Point &p);
     friend std::istream &operator>>(std::istream &is, Point &p);
 };
@@ -26,6 +27,7 @@ public:
     friend std::ostream &operator<<(std::ostream &os, const Rectangle &p);
     friend std::istream &operator>>(std::istream &is, Rectangle &p);
     std::pair<Point, Point> getCorners() const;
+    bool operator==(const Rectangle &other) const;
     Rectangle operator+(const int scalar) const;
     Rectangle operator-(const int scalar) const;
     Rectangle operator&(const Rectangle &other) const;

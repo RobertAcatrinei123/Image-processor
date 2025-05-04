@@ -6,6 +6,7 @@
 #include <string>
 #include <assert.h>
 #include "imgprocessing.h"
+#include "drawer.h"
 
 void testAll()
 {
@@ -13,6 +14,8 @@ void testAll()
     testIOStream();
     testOperators();
     testImageProcessing();
+    testDrawer();
+    testGeometry();
 }
 
 void testIOFunctions()
@@ -101,4 +104,27 @@ void testImageProcessing()
     Convolution conv5(ConvolutionType::VerticalSobel);
     conv5.process(img1, img2);
     img2.save("saturn_out_vertical_sobel.pgm");
+}
+
+void testDrawer()
+{
+    Image img;
+    img.load("saturn.ascii.pgm");
+    Drawer::drawCircle(img, Point(200, 200), 100, 255);
+    img.save("saturn_out_circle.pgm");
+    img.load("saturn.ascii.pgm");
+    Drawer::drawRectangle(img, Point(200, 200), Point(400, 400), 255);
+    img.save("saturn_out_rectangle.pgm");
+    img.load("saturn.ascii.pgm");
+    Drawer::drawLine(img, Point(0, 0), Point(400, 400), 255);
+    img.save("saturn_out_line.pgm");
+}
+
+void testGeometry()
+{
+    Rectangle r1(0, 0, 100, 100);
+    Rectangle r2(50, 50, 150, 150);
+    assert(r1 == r1);
+    assert((r1 & r2) == Rectangle(50, 50, 50, 50));
+    assert((r1 | r2) == Rectangle(0, 0, 200, 200));
 }
